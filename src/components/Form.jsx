@@ -5,7 +5,7 @@ import { useState } from "react";
 import Information from "./Information";
 
 
-const useStyles=makeStyles({
+const useStyles=makeStyles(theme=>({
     component:{
         padding:10,
         background:'#445A6F'
@@ -19,9 +19,17 @@ const useStyles=makeStyles({
         height:40,
         background:'#e67e22',
         color:'#fff',
-        marginTop:5
+        marginTop:5,
+        [theme.breakpoints.down('sm')]:{
+            width:100,
+            height:30,
+            background:'#e67e22',
+            color:'#fff',
+            marginTop:10,
+            fontSize:9
+        }
     }
-})
+}));
 
 const Form=()=>{
     const classes=useStyles();

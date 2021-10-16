@@ -9,24 +9,33 @@ import CloudIcon from '@material-ui/icons/Cloud'
 import AccessibilityIcon from '@material-ui/icons/Accessibility';
 
 
-const useStyles=makeStyles({
+const useStyles=makeStyles(theme=>({
     component:{
         margin:30
     },
     row:{
         padding:8,
         fontSize:17,
-        letterSpacing:2
+        letterSpacing:2,
+        [theme.breakpoints.down('sm')]:{
+            padding:8,
+            fontSize:10,
+            letterSpacing:2,
+        }
     },
     value:{
         color:'#fff',
-        fontSize:15
+        fontSize:15,
+        [theme.breakpoints.down('sm')]:{
+            color:'#fff',
+            fontSize:8,
+        }
     },
     icon:{
         marginRight:15,
         color:'darkred',
     }
-})
+}));
 
 const Information=({data})=>{
     const classes=useStyles();
